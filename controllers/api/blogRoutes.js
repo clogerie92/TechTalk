@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// create a blog
 router.post('/', withAuth, async (req, res) => {
   try {
     const newBlog = await Blog.create({
@@ -15,6 +16,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// delete a blog with matching id
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.destroy({
@@ -25,7 +27,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!blogData) {
-      res.status(404).json({ message: 'No Blog found with this id!' });
+      res.status(404).json({ message: 'Error 404: No blog found with this id!' });
       return;
     }
 
