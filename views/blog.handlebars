@@ -25,8 +25,8 @@
 <h2 class="text-center">Blog Comments</h2>
 {{#each comments as |comment|}}
 <div class="comment-container">
-    <ul>
-        <li>
+    <ul class="list-group">
+        <li class="list-group-item">
             <p class="text-center comment-content">{{comment.comment}}</p>
             <hr>
             <p class="text-center comment-creator">Commented by {{comment.user.username}} on {{date_created}}</p>
