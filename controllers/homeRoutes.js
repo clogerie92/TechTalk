@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Blog, Comment } = require('../models');
+const { Users, Blog, Comments } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
       const blogData = await Blog.findAll({
         include: [
           {
-            model: User,
+            model: Users,
             attributes: ["username"],
           },
         ],
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
       const blogs = blogData.map((blog) => blog.get({ plain: true }));
   
       // Pass serialized data and session flag into template
-      res.render('homepage', { 
+      res.render('home', { 
         blogs, 
         logged_in: req.session.logged_in 
       });
@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
       const blogData = await Blog.findByPk(req.params.id, {
         include: [
           {
-            model: User,
+            model: Users,
             attributes: ["username"],
           },
         ],
@@ -68,22 +68,22 @@ router.get('/', async (req, res) => {
     }
   });
 
-  router.get('/login', (req, res) => {
+  router.get('/signin', (req, res) => {
     if (req.session.logged_in) {
       res.redirect("/dashboard");
       return;
     }
   
-    res.render("login");
+    res.render("signin");
   });
 
-  router.get("/signUp", (req, res) => {
+  router.get("/signup", (req, res) => {
     if (req.session.logged_in) {
       res.redirect("/dashboard");
       return;
     }
   
-    res.render("signUp");
+    res.render("signup");
   });
   
   module.exports = router;
