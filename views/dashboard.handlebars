@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-auto">
+        <h1>
+            Hello {{ user.username }}! Welcome to Tech Talk!
+        </h1>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col-md-4">
+        <h2>New Blog:</h2>
+     <form class="row g-3 new-blog-form">
+        <div class="blog-content">
+            <textarea type="text" class="form-control" placeholder="enter blog here..." id="blog-body"></textarea>
+        </div>
+        <div class="submit-blog">
+            <button class="btn btn-primary" type="submit" id="submitBtn"><i class="bi bi-send-fill"></i></button>
+            <button class="btn btn-danger" type="submit" id="deleteBtn" data-id={{blog.id}}><i class="bi bi-trash3-fill"></i></button>
+        </div>
+     </form>
+    </div>
+
+    {{#if blogs.length}}
+    <div class="col-md-4 blog-list">
+        <h2>Blog Feed:</h2>
+        {{#each blogs as |blog|}}
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h3><a href="/blog/{{blog.id}}">{{blog.blog}}</a></h3>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</div>
+
+<script src="/js/dashboard.js"></script>
