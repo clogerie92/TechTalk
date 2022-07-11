@@ -14,12 +14,14 @@
 </div>
 
 {{#if logged_in}}
-<div class="mb-3">
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="enter comment here..."></textarea>
-</div>
-<div class="commentBtn">
-    <button class="btn btn-primary" type="submit"><i class="bi bi-arrow-up"></i></button>
-</div>
+<form class="new-comments" data-blogid={{id}}>
+  <div class="mb-3">
+    <textarea class="form-control" id="blog-comments" rows="3" placeholder="enter comment here..."></textarea>
+  </div>
+  <div class="commentBtn">
+    <button class="btn btn-primary" type="submit" id="submitBtn"><i class="bi bi-arrow-up"></i></button>
+  </div>
+</form>
 {{/if}}
 
 <h2 class="text-center">Blog Comments</h2>
