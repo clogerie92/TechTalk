@@ -1,26 +1,25 @@
-<div>
-    <h1>Sign Up</h1>
-    <form class="form signup-form">
-    <div class="form-group">
-      <input class="form-input" type="text" placeholder="Email" id="email-signup" />
+<div class="row">
+    <div class="col justify-content-center">
+        <h2 class="signin">Sign Up</h2>
+        <form class="form sign-up-form">
+          <div class="form-group">
+                <input type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" id="email-signup">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Username" aria-label="username" aria-describedby="basic-addon1" id="username-signup">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" aria-label="password" aria-describedby="basic-addon1" id="password-signup">
+            </div>
+            <div class="form-group block">
+                <button type="submit" class="btn btn-success form-control" placeholder="Sign Up" aria-describedby="basic-addon1" id="submitBtn">Sign Up</button>
+            </div>
+        </form>    
     </div>
-
-    <div class="form-group">
-      <input class="form-input" type="text" placeholder="Username" id="username-signup" />
-    </div>
-
-    <div class="form-group">
-      <input class="form-input" type="password" placeholder="Password" id="password-signup" />
-    </div>
-
-    <div class="form-group">
-      <button class="btn btn-primary" type="submit" id="submitBtn">Signup</button>
-    </div>
-  </form>
+</div>
 
   <div>
     <a href="/signin">Already have an account? Sign in here!</a>
   </div>
-</div>
 
 <script src="/js/signup.js"></script>
