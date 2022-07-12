@@ -1,0 +1,72 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.navbar {
+    background-color: #B8B8B8	;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: large;
+}
+
+.comment-container {
+    margin-top: 10px;
+    border-style: solid;
+}
+
+a {
+    text-decoration: none;
+}
+
+.blog-text-container {
+    border-style: solid;
+    margin-bottom: 5px;
+    padding: 2px;
+    /* background-color: #42bff5; */
+}
+
+.card {
+    margin-top: 10px;
+    border-style: solid;
+    color: black
+    /* background-color: #42bff5; */
+}
+
+.card-header {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.comment-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    max-width: 75%;
+    /* background-color: #42bff5; */
+    color: black;
+}
+
+.blog-comments {
+    font-size: 14px;
+    width: 290px;
+}
+
+.signin, .signup {
+    margin-left: 25px;
+}
+
+a:link {
+    color: blue
+}
+
+a:hover {
+    color: purple
+}
+
+
+
+
+

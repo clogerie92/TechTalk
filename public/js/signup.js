@@ -7,7 +7,7 @@ const signUpFormHandler = async (event) => {
     
       if (email && username && password) {
         console.log("signup");
-        const response = await fetch('/api/users/signup', {
+        const response = await fetch('/api/users', {
           method: 'POST',
           body: JSON.stringify({ email, username, password }),
           headers: { 'Content-Type': 'application/json' },

@@ -1,16 +1,16 @@
 const router = require('express').Router();
-const { Comment } = require('../../models');
+const { Comments } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get("/", (req, res) => {
-    Comment.findAll({}).then(commentData => res.json(commentData)).catch(err => {
+    Comments.findAll({}).then(commentData => res.json(commentData)).catch(err => {
         console.log(err);
         res.status(500).json(err)
     });
 });
 
 router.get("/:id", (req, res) => {
-    Comment.findAll({
+    Comments.findAll({
         where: {
             id: req.params.id
         }
@@ -22,7 +22,7 @@ router.get("/:id", (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-      const newComment = await Comment.create({
+      const newComment = await Comments.create({
         ...req.body,
         user_id: req.session.user_id,
       });
@@ -35,15 +35,15 @@ router.post('/', async (req, res) => {
 
   router.delete('/:id', withAuth, async (req, res) => {
     try {
-      const commentData = await Comment.destroy({
+      const commentData = await Comments.destroy({
         where: {
           id: req.params.id,
           user_id: req.session.user_id,
         },
       });
   
-      if (!projectData) {
-        res.status(404).json({ message: 'Error 404: No blog found with this id!' });
+      if (!commentData) {
+        res.status(404).json({ message: 'Error 404: No comment found with this id!' });
         return;
       }
   

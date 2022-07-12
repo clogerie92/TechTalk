@@ -5,16 +5,16 @@ const leaveAComment = async (event) => {
     const commentBody = document.querySelector("#blog-comments").value.trim();
 
     if (commentBody) {
-        const data = {
-            blogId, 
-            comments: commentBody
-        }
-        console.log(data);
+        // const data = {
+        //     blogId, 
+        //     comment: commentBody
+        // }
+        // console.log(data);
         await fetch ("/api/comments", {
             method: "POST",
             body: JSON.stringify({
-                blogId, 
-                comments: commentBody,
+                blog_id: blogId, 
+                comment: commentBody,
             }),
             headers: {
                 "content-type": "application/json"
