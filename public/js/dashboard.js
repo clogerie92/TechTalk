@@ -33,4 +33,4 @@ const deleteBlog = async (event) => {
 };
 
 document.querySelector("#submitBtn").addEventListener("click", newBlogHandler);
-document.querySelector("#deleteBtn").addEventListener("click", deleteBlog);
+document.querySelector(".blog-list").addEventListener("click", deleteBlog);
