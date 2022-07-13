@@ -17,7 +17,7 @@ The following image shows a mock-up of the generated HTML’s appearance and fun
 
 ![Existing blogs are listed in the right-hand column with empty fields on the left-hand side for the new blog's title and content](./images/techtalk.png)
 <br>
-Heroku Deployment - (https://techtalk-cgl.herokuapp.com/)
+Heroku Deployment - (https://morning-lake-99145.herokuapp.com/)
 
 ## Installation 
 The user should clone the repository from GitHub and then install Node. The user shoulder also create a database and then seed it. The depencies for this application include: bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, and sequelize. 
